@@ -1,16 +1,18 @@
 # Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
 
 # Implementation-of-Half-Adder-and-Full-Adder-circuit
+
 ### AIM:
+
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
 ### Equipments Required:
-Hardware – PCs, Cyclone II , USB flasher
-Software – Quartus prime
-Theory
-Adders are digital circuits that carry out addition of numbers.
 
-### Half Adder
+Hardware – PCs, Cyclone II , USB flasher Software – Quartus prime Theory Adders are digital circuits that carry out addition of numbers.
+
+
+### Half Adder :
+
 Half adder is a combinational circuit that performs simple addition of two binary numbers. The input variables designate the augend and addend bits; the output variables produce the sum and carry. It is necessary to specify two output variables because the result may consist of two binary digits.
 
 Sum = A’B+AB’ =A ⊕ B Carry = AB
@@ -20,35 +22,88 @@ Full adder is a digital circuit used to calculate the sum of three binary bits. 
 
 Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
 
- ![image](https://user-images.githubusercontent.com/36288975/163552156-a13e5a56-c638-4110-97d9-8896907c8d25.png)
+![](/half.png)
 
 #### Figure -01 HALF ADDER 
 
-
-![image](https://user-images.githubusercontent.com/36288975/163552057-b3547877-6d07-45b4-b7e0-bcfebfad9e1d.png)
+![](/fadd%20(1).jpeg)
 
 #### Figure -02 FULL ADDER 
 
 ### Procedure
 
-Connect the supply (+5V) to the circuit
-Switch ON the main switch
-If the output is 1, then the led glows.
-### 
-Program:
-/*
+1.Connect the supply (+5V) to the circuit
+
+2.Switch ON the main switch
+
+3.If the output is 1, then the led glows.
+
+### Program:
+```
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+Developed by: thanika sree b
+RegisterNumber:  22008978
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+Half Adder Program:
+
+module HalfAdder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
+
+Full Adder Program:
+
+module FullAdder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum=((a^b)^c);
+assign carry=((a&b)|(b&c)|(c&a));
+endmodule
+```
+
+RTL realization ;
+
+HALF ADDER 
+
+![](/hadd%20(1).jpeg)
+
+FULL ADDER 
+
+![](/fadd%20(1).jpeg)
 
 
-### TRUTH TABLE 
+### TIMING DIAGRAM :
+
+HALF ADDER :
+
+![](/Tdha.png)
+
+FULL ADDER :
+
+![](/tdfa.png)
+
+### LOGIC DIAGRAM :
+
+HALF ADDER :
+
+![](/ha_logicsym%20(2).png)
+
+FULL ADDER :
+
+![](/fa_logicsym%20(1).png)
+
+### TRUTH TABLE :
+
+HALF ADDER :
+
+![](/truthtableha%20(1).png)
+
+FULL ADDER :
+
+![](/truthtablefa%20(1).png)
 
 ### Result:
+
+Thus the half adder and full adder are studied and the truth table for different logic gates are verified.
